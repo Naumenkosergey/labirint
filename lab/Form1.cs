@@ -25,6 +25,20 @@ namespace lab
         private void Button1_Click(object sender, EventArgs e)
         {
             Sound.PlayCkick();
+            level1Start();
+        }
+
+        private void level1Start()
+        {
+            Level1Form level1 = new Level1Form();
+            DialogResult dr =level1.ShowDialog();
+            if (dr == DialogResult.OK)
+                level2Start();
+        }
+
+        private void level2Start()
+        {
+            MessageBox.Show("Вы перешли на второй уровень");
         }
 
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
