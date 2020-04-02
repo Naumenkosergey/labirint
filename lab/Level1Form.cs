@@ -23,9 +23,15 @@ namespace lab
         }
         void StartLevel()
         {
+            
             Point point = labelStart.Location;
             point.Offset(labelStart.Width / 2, labelStart.Height / 2);
             Cursor.Position = PointToScreen(point);
+            label6.Visible = true;
+            label7.Visible = true;
+            label8.Visible = true;
+            label9.Visible = true;
+            cube = 0;
         }
 
         
@@ -47,7 +53,21 @@ namespace lab
 
         private void Labelfinish_MouseEnter(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
+            if (cube == 4)
+                DialogResult = DialogResult.OK;
+        }
+        int cube = 0;
+        private void Label6_Enter(object sender, EventArgs e)
+        {
+    
+            
+        }
+
+        private void Label6_MouseEnter(object sender, EventArgs e)
+        {
+            Sound.PlayCkick();
+            sender.GetType().GetProperty("Visible").SetValue(sender, false);
+            cube++;
         }
     }
 }

@@ -12,7 +12,6 @@ namespace lab
         static bool play = true;
         static SoundPlayer click = new SoundPlayer(Properties.Resources.click);
 
-
         public static void SoundOff()
         {
             play = false;
