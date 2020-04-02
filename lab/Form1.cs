@@ -24,7 +24,21 @@ namespace lab
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            Sound.PlayCkick();
+        }
 
+        private void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox1.Checked)
+            {
+                checkBox1.Text = "Звук Есть";
+                Sound.SoundON();
+            }
+            else
+            {
+                checkBox1.Text = "Звука Нет";
+                Sound.SoundOff();
+            }
         }
     }
 }
